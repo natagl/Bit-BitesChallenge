@@ -1,11 +1,15 @@
 class Encoder {
     constructor(input) {
         this._input = input;
+        //Use Regular expression and Match to divide input string into 4 character chunks
+        this._splitArray = input.match(/.{1,4}/g);
+        //decimal is an empty array which will return the final result
+        this._finalDecimalArray = [];
         this._len = input.length;
         this._resultDecimal = [];
         this._asciiArr = [];
         this._bit = 0;
-        this._LOOP_LEN = 7;
+        this._LOOP_LEN = 8;
         this._INPUT_LEN = 4;
         this._result = 0;
     }
@@ -47,7 +51,7 @@ class Encoder {
     //Returns true, if valid length
     //Returns false, if invalid length
     checkForValidInputLength() {
-        if (this._len <= 0 || this._len > 4) {
+        if (this._len <= 0) {
             return false;
         };
         return true;
@@ -58,10 +62,10 @@ class Encoder {
             return "Input is out of ASCII Table";
         }
     }
-    // 
-    convetStringToDecimal() {
+    //
+    convetStringToDecimal(elem) {
         for (let i = 0; i < this._INPUT_LEN; i++) {
-            this._asciiArr[i] = this._input.charCodeAt(i);
+            this._asciiArr[i] = elem.charCodeAt(i);
 
             //Zero-padding logic
             if (isNaN(this._asciiArr[i]) == true) //ascii[i] == 'NaN'
@@ -72,20 +76,20 @@ class Encoder {
             this.checkAsciiLimit(this._asciiArr[i]);
         }
 
-        console.log("before reversing : " + this._asciiArr);
+        //console.log("before reversing : " + this._asciiArr);
     }
 
     // reversing output
     reveseArr() {
         this._asciiArr.reverse();
-        console.log("after reversing : " + this._asciiArr);
-        console.log("----------");
+        //console.log("after reversing : " + this._asciiArr);
+        //console.log("----------");
     }
 
     convertArraytoString() {
         //Join the decimal array and return string
         this._result = this._resultDecimal.join(""); //result is a string
-        console.log(this._result);
+        //console.log(this._result);
     }
 
     //convert to decimal, parseInt will always give decimal result
@@ -94,6 +98,11 @@ class Encoder {
     convertBinaryToDecimal() {
         //Saving the final Decimal in "this._result"
         this._result = parseInt(this._result, 2);
+    }
+
+    resetResultDecimalArray() {
+        this._resultDecimal.length = 0;
+        this._resultDecimal = [];
     }
 
     /****Encoding starts here******/
@@ -109,32 +118,36 @@ class Encoder {
             return "Input should be between 1 and 4";
         }
 
-        //Step2. We convert input to ascii value
-        this.convetStringToDecimal();
+        this._splitArray.forEach(element => {
+            //Step2. We convert input to ascii value
+            this.convetStringToDecimal(element);
 
-        //Step3. We Reverse the ascii array
-        this.reveseArr();
+            //Step3. We Reverse the ascii array
+            this.reveseArr();
 
-        //Step4.Main Logic: shifting and masking
-        for (let j = 0; j <= this._LOOP_LEN; j++) {
-            for (let i = this._INPUT_LEN - 1; i >= 0; i--) {
-                this._bit = ((this._asciiArr[i] >> j) & 1); // i = 0, bit = 0
-                this._resultDecimal.unshift(this._bit);
+            //Step4.Main Logic: shifting and masking
+            for (let j = 0; j < this._LOOP_LEN; j++) {
+                for (let i = this._INPUT_LEN - 1; i >= 0; i--) {
+                    this._bit = ((this._asciiArr[i] >> j) & 1); // i = 0, bit = 0
+                    this._resultDecimal.unshift(this._bit);
+                }
             }
-        }
-        console.log(this._resultDecimal);
+            //console.log(this._resultDecimal);
 
-        //Step5. We join "this._resultDecimal" to a string
-        this.convertArraytoString();
+            //Step5. We join "this._resultDecimal" to a string
+            this.convertArraytoString();
 
-        //Step6. We Convert the string from Binary to Decimal
-        this.convertBinaryToDecimal();
+            //Step6. We Convert the string from Binary to Decimal
+            this.convertBinaryToDecimal();
 
-        //Step7. Finally, return the desired decimal value
-        return this._result;
+            //Step7. Push the encoded decimal for first 4 characters into the final array
+            this._finalDecimalArray.push(this._result);
+
+            //Step8. Reset the intermediate result decimal array
+            this.resetResultDecimalArray();
+        });
+
+        //Step9. Finally, return the desired decimal value in the Array
+        return this._finalDecimalArray;
     }
 }
-
-// let ourEncoder = new Encoder('F');
-// //console.log(ourEncoder);
-// console.log(ourEncoder.encode());

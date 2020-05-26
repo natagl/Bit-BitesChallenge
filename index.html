@@ -1,40 +1,42 @@
 <html>
-<link rel="stylesheet" href="index.css">
-<div class="table">
-    <div class="input">
-        <tr>
-            <td>
-                <label class="label">Input:</label>
-                <br><br>
-                <input type="text" id="input" name="text" />
-                <form action="index.js">
+
+<body>
+    <link rel="stylesheet" href="index.css">
+    <div class="table">
+        <div class="input">
+            <tr>
+                <td>
+                    <label class="label">Input:</label>
+                    <br><br>
+                    <input type="text" id="input" name="text" />
+                    <!-- <form action="index.js">
                     <div>
                         <input type="file" id="myFile" name="filename">
                         <input type="submit">
                     </div>
-                </form>
-            </td>
-        </tr>
+                </form> -->
+                </td>
+            </tr>
+        </div>
+        <br><br>
+        <div class="encode">
+            <button id="encodeBtn" name="encodeF" onclick="encodeFunction()">Encode</button>
+        </div>
+        <div class="decode">
+            <button id="decodeBtn" onclick="decodeFunction()">Decode</button>
+        </div>
+        <br>
+        <div class="output">
+            <tr>
+                <td>
+                    <label class="label">Output:</label>
+                    <br><br>
+                    <output id="output" name="result" for="text"></output>
+                </td>
+            </tr>
+        </div>
     </div>
-    <br><br>
-    <div class="encode">
-        <button id="encodeBtn" onclick="myFunction()">Encode</button>
-    </div>
-    <div class="decode">
-        <button id="decodeBtn" onclick="">Decode</button>
-    </div>
-    <div id="result"></div>
-    <br>
-    <div class="output">
-        <tr>
-            <td>
-                <label class="label">Output:</label>
-                <br><br>
-                <input type="text" id="output">
-            </td>
-        </tr>
-    </div>
-</div>
+</body>
 <script src="encode.js"></script>
 <script src="index.js"></script>
 

@@ -1,10 +1,15 @@
 let inputData = "";
-function myFunction() {
+function encodeFunction() {
     inputData = document.getElementById("input").value;
-    console.log(inputData);
+    // console.log(inputData);
     let ourEncoder = new Encoder(inputData);
-    console.log(ourEncoder.encode());
+    // console.log(ourEncoder.encode());
+    document.getElementById("output").innerHTML = ourEncoder.encode();
+
 }
+
+
+
 
 
 
