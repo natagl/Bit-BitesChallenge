@@ -115,7 +115,7 @@ class Encoder {
     encode() {
         //Step1. Check for valid input
         if (this.checkForValidInputLength() == false) {
-            return "Input should be between 1 and 4";
+            return " Input should be greater than 0 ";
         }
 
         this._splitArray.forEach(element => {

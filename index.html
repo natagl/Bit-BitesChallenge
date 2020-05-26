@@ -1,43 +1,50 @@
 <html>
 
-<body>
+<head>
     <link rel="stylesheet" href="index.css">
+    <script src="encode.js"></script>
+    <script src="decode.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="rules">
+        <p>To Encode, type characters into input box. Press Encode to convert your input into a decimal value.</p>
+        Example:
+        <p>Input: Nataliia <br> Output: 266605850,267415822 </p>
+        <p>To Decode, type a number or a list of numbers separated by comas. Press Decode to convert your input into a
+            string.</p>
+        Example:
+        <p>Input: 266398613,124854327 <br> Output: Glinska </p>
+    </div>
     <div class="table">
-        <div class="input">
+        <div class="inputDiv">
             <tr>
                 <td>
-                    <label class="label">Input:</label>
-                    <br><br>
-                    <input type="text" id="input" name="text" />
-                    <!-- <form action="index.js">
-                    <div>
-                        <input type="file" id="myFile" name="filename">
-                        <input type="submit">
-                    </div>
-                </form> -->
+                    <label for="input">Input: </label>
+                    <input type="text" id="input" name="text" placeholder=" Type your input here...">
                 </td>
             </tr>
         </div>
         <br><br>
-        <div class="encode">
-            <button id="encodeBtn" name="encodeF" onclick="encodeFunction()">Encode</button>
-        </div>
-        <div class="decode">
-            <button id="decodeBtn" onclick="decodeFunction()">Decode</button>
+        <div class="btnCode">
+            <div class="encode">
+                <button id="encodeBtn" name="encodeF" onclick="encodeFunction()">Encode</button>
+            </div>
+            <div class="decode">
+                <button id="decodeBtn" onclick="decodeFunction()">Decode</button>
+            </div>
         </div>
         <br>
-        <div class="output">
+        <div class="outputDiv">
             <tr>
                 <td>
-                    <label class="label">Output:</label>
-                    <br><br>
+                    <label for if="output">Output:</label>
                     <output id="output" name="result" for="text"></output>
                 </td>
             </tr>
         </div>
     </div>
 </body>
-<script src="encode.js"></script>
-<script src="index.js"></script>
 
 </html>

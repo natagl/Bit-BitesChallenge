@@ -1,17 +1,89 @@
-#input{
-    width: 300px;
-    margin-left: 135px;
+body{
+    
 }
 
-#output{
-    width: 300px;
-    margin-left: 135px;
+.rules{
+margin-left: 20px;
+margin-top: 20px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .table{
+    width: 800px;
     height: 300px;
-    margin-top: 150px;
-    margin-left: 50px;
+    margin-top: 30px;
+    margin-left: 250px;
     margin-right: 50px;
     box-shadow: 0 0 4px black;
+    border-radius: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+label{
+    margin-left: 20px;
+}
+
+#input{
+    width: 80%;
+    height: 50px;
+    padding: 15px 22px;
+    background-color: whitesmoke;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: width 0.5s ease-in-out;
+    margin-left: 5%;
+    margin-top: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#output{
+    width: 80%;
+    height: 50px;
+    margin-left: 5%;
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.btnCode{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#encodeBtn{
+    font-size: large;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 6px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(28, 184, 65);
+}
+
+#encodeBtn:hover{
+    background-color: turquoise;
+    color: black;
+}
+
+#decodeBtn{
+    font-size: large;
+    background: rgb(66, 184, 221);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 6px;
+    text-shadow: 0 0 20px #1d6a76;;
+}
+
+#decodeBtn:hover{
+    background-color: lawngreen;
+    color: black;
+}
+
+.outputDiv{
+    margin-top: 50px;
+}
+
+.inputDiv{
+    margin-top: 10px;
 }
