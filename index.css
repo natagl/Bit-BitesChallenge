@@ -1,11 +1,7 @@
-body{
-    
-}
-
 .rules{
 margin-left: 20px;
 margin-top: 20px;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-family: Arial, sans-serif;
 }
 
 .table{
@@ -14,36 +10,44 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 30px;
     margin-left: 250px;
     margin-right: 50px;
-    box-shadow: 0 0 4px black;
+    box-shadow: inset 0 0 10px whitesmoke;
     border-radius: 8px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%);
+}
+
+.table:hover{
+    background-position: right center;
 }
 
 label{
     margin-left: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
 }
 
 #input{
     width: 80%;
     height: 50px;
     padding: 15px 22px;
-    background-color: whitesmoke;
+    background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%);
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
     margin-left: 5%;
-    margin-top: 5%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 3%;
+    font-family: Arial, sans-serif;
+}
+
+#input:hover{
+    background-position: right center;   
 }
 
 #output{
     width: 80%;
-    height: 50px;
     margin-left: 5%;
     display: inline-block;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+    font-family: Arial, sans-serif;
 }
 
 .btnCode{
@@ -53,37 +57,68 @@ label{
 }
 
 #encodeBtn{
-    font-size: large;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 6px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: rgb(28, 184, 65);
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #FFF;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 1px 3px rgba(116, 6, 6, 0.12), 0 1px 2px rgba(82, 2, 2, 0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, #8e9eab 0%, #eef2f3 51%, #8e9eab 100%)
 }
-
 #encodeBtn:hover{
-    background-color: turquoise;
-    color: black;
+    background-position: right center; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
 }
 
-#decodeBtn{
-    font-size: large;
-    background: rgb(66, 184, 221);
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 6px;
-    text-shadow: 0 0 20px #1d6a76;;
+#decodeBtn {
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #FFF;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, #E6DADA 0%, #274046 51%, #E6DADA 100%)
 }
-
 #decodeBtn:hover{
-    background-color: lawngreen;
-    color: black;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+    background-position: right center;
 }
 
 .outputDiv{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .inputDiv{
     margin-top: 10px;
+}
+
+.ex{
+    font-style: italic;
+    font-weight: bold;
 }

@@ -1,3 +1,10 @@
+//
+// Created by Nataliia Glinska on 05/26/2020 glinska.nataliia21@gmail.com
+//
+// encode.js : Implementation of Encoder class. This class contains the required properties
+//             and methods to perform the logic of encoding strings.
+//
+
 class Encoder {
     constructor(input) {
         this._input = input;
@@ -9,45 +16,16 @@ class Encoder {
         this._resultDecimal = [];
         this._asciiArr = [];
         this._bit = 0;
+        this._result = 0;
+
+        // Constants
         this._LOOP_LEN = 8;
         this._INPUT_LEN = 4;
-        this._result = 0;
-    }
-    // --------------------------------------------
-    // Getters
-    get input() {
-        return this._input;
     }
 
-    get inputLength() {
-        return this._len;
-    }
-
-    get resultDecimal() {
-        return this._resultDecimal;
-    }
-
-    get asciiArr() {
-        return this._asciiArr;
-    }
-
-    get bit() {
-        return this._bit;
-    }
-
-    get result() {
-        return this._result;
-    }
-
-    static get LOOP_LEN() {
-        return 7;
-    }
-
-    static get INPUT_LEN() {
-        return 4;
-    }
     // ------------------------------------------------------
     //Methods
+
     //Returns true, if valid length
     //Returns false, if invalid length
     checkForValidInputLength() {
@@ -56,13 +34,15 @@ class Encoder {
         };
         return true;
     }
-    // cheking if elemnet exists in ASCII Table
+
+    // Check if element exists in ASCII Table
     checkAsciiLimit(asciiVal) {
         if (asciiVal < 0 || asciiVal > 255) {
             return "Input is out of ASCII Table";
         }
     }
-    //
+
+    //Conversion of each characters to ascii value
     convetStringToDecimal(elem) {
         for (let i = 0; i < this._INPUT_LEN; i++) {
             this._asciiArr[i] = elem.charCodeAt(i);
@@ -75,24 +55,23 @@ class Encoder {
             //Check for Ascii limit after all conversion is done
             this.checkAsciiLimit(this._asciiArr[i]);
         }
-
-        //console.log("before reversing : " + this._asciiArr);
     }
 
-    // reversing output
+    // Reversing Array for getting least significant bit starting from the last byte
     reveseArr() {
         this._asciiArr.reverse();
         //console.log("after reversing : " + this._asciiArr);
         //console.log("----------");
     }
 
+    // Conversion of Array to String
     convertArraytoString() {
         //Join the decimal array and return string
         this._result = this._resultDecimal.join(""); //result is a string
         //console.log(this._result);
     }
 
-    //convert to decimal, parseInt will always give decimal result
+    // Convert to decimal, parseInt will always give decimal result
     // result is the string we want to convert
     // 2 - is the string representaion specifying the numeric base
     convertBinaryToDecimal() {
@@ -100,6 +79,7 @@ class Encoder {
         this._result = parseInt(this._result, 2);
     }
 
+    // Reset Array and indexes to get ready to process next element of splitArray
     resetResultDecimalArray() {
         this._resultDecimal.length = 0;
         this._resultDecimal = [];
@@ -115,7 +95,7 @@ class Encoder {
     encode() {
         //Step1. Check for valid input
         if (this.checkForValidInputLength() == false) {
-            return " Input should be greater than 0 ";
+            return "Input should be greater than zero";
         }
 
         this._splitArray.forEach(element => {
