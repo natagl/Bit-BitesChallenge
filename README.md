@@ -2,3 +2,14 @@
 ### Bit interleaving for transmitting and receiving. 
 ###### Encodind&amp;Decoding 1️⃣0️⃣0️⃣1️⃣0️⃣1️⃣0️⃣1️⃣ 
 ![homePage](/READMED.jpg)
+Built With
+
+⦁	HTML
+
+⦁	CSS
+
+⦁	Java Script
+
+Contact
+
+Nataliia Glinska -  glinska.nataliia21@gmail.com📩
