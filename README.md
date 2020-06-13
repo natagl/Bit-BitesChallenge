@@ -12,5 +12,5 @@ Built With
 
 Contact
 
-Nataliia Glinska -  glinska.nataliia21@gmail.com📩
-Project Link : https://natagl.github.io/Bit-BitesChallenge/
+#### Nataliia Glinska -  glinska.nataliia21@gmail.com📩
+#### Project Link : https://natagl.github.io/Bit-BitesChallenge/
