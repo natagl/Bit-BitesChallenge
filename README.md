@@ -32,9 +32,9 @@ Built With
 
 ⦁	CSS
 
-⦁	Java Script
+⦁	Java Script 
 
 Contact
 
-#### Nataliia Glinska -  glinska.nataliia21@gmail.com📩
+#### Nataliia Glinska -  glinska.nataliia21@gmail.com📩<br>
 #### Project Link : https://natagl.github.io/Bit-BitesChallenge/
